@@ -132,11 +132,31 @@ if (canonicalUrl.pathname.length > 1) {
 }
 const canonical = canonicalUrl.href
 
-const resolvedTitle = useTitleTemplate ? `${pageTitle} | ${themeConfig.seo.title}` : pageTitle
+const shouldApplyTemplate = useTitleTemplate && pageTitle !== themeConfig.seo.title
+const resolvedTitle = shouldApplyTemplate ? `${pageTitle} | ${themeConfig.seo.title}` : pageTitle
 const homeUrl = absoluteUrl('/')
 const personId = `${homeUrl}#person`
 const websiteId = `${homeUrl}#website`
 const pageId = `${canonical}#webpage`
+
+// Standalone Person Schema strictly matching the exact specification for Knowledge Graph Entity SEO
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Vinit Shinde',
+  jobTitle: 'Software Development Engineer',
+  url: 'https://vinitshinde.netlify.app',
+  sameAs: [
+    'https://github.com/vinit-s-shinde',
+    'https://linkedin.com/in/vinit-s-shinde',
+    'https://vinitshinde.medium.com',
+    'https://dev.to/vinitshinde',
+    'https://leetcode.com/u/vinitshinde/',
+    'https://codechef.com/users/nexus_2',
+    'https://codeforces.com/profile/Vinit99',
+  ],
+}
+const personJsonLd = JSON.stringify(personSchema, null, 2).replace(/</g, '\\u003c')
 
 const globalStructuredData: StructuredData[] = [
   {
@@ -144,42 +164,18 @@ const globalStructuredData: StructuredData[] = [
     '@id': personId,
     name: 'Vinit Shinde',
     alternateName: 'Vineet Shinde',
-    jobTitle: 'Java and JVM Developer',
+    jobTitle: 'Software Development Engineer',
     url: 'https://vinitshinde.netlify.app',
     image: absoluteUrl(site.ogImage),
-    description:
-      'Vinit Shinde is a Java developer specializing in performance-optimized backend systems, low-memory frameworks.',
+    description: site.description,
     email: `mailto:${site.email}`,
-    sameAs: [
-      'https://github.com/Vin-it-9',
-      'https://www.linkedin.com/in/vinit-shinde-920531254/',
-      'https://medium.com/@vineetshinde2559',
-      'https://dev.to/vinitshinde__',
-    ],
-    knowsAbout: [
-      'Java Backend Engineering',
-      'JVM Ecosystem Frameworks',
-      'Micronaut',
-      'Quarkus',
-      'Java 25',
-      'JVM',
-      'Spring Boot',
-      'GraalVM Native Image',
-      'Developer Tooling',
-    ],
+    sameAs: [...site.sameAs],
+    knowsAbout: [...site.knowsAbout],
     hasOccupation: {
       '@type': 'Occupation',
-      name: 'Java and JVM Developer',
+      name: 'Software Development Engineer',
       occupationalCategory: 'Software Development',
-      skills: [
-        'Java Backend Engineering',
-        'JVM Ecosystem Frameworks',
-        'Micronaut',
-        'Quarkus',
-        'Spring Boot',
-        'GraalVM Native Image',
-        'Developer Tooling',
-      ].join(', '),
+      skills: site.knowsAbout.join(', '),
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -277,7 +273,7 @@ const keywords = [site.name, site.jobTitle, ...site.knowsAbout, 'portfolio', 'so
 
     <SEO
       title={pageTitle}
-      titleTemplate={useTitleTemplate ? `%s | ${themeConfig.seo.title}` : undefined}
+      titleTemplate={shouldApplyTemplate ? `%s | ${themeConfig.seo.title}` : undefined}
       titleDefault={themeConfig.seo.title}
       description={pageDescription}
       canonical={canonical}
@@ -340,6 +336,10 @@ const keywords = [site.name, site.jobTitle, ...site.knowsAbout, 'portfolio', 'so
       }}
     />
 
+    <!-- Knowledge Graph Person Entity Schema -->
+    <script type="application/ld+json" is:inline set:html={personJsonLd} />
+
+    <!-- Site and Page Structured Data Graph -->
     <script type="application/ld+json" set:html={jsonLd} />
 
   </head>

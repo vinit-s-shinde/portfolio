@@ -2,7 +2,7 @@ import { blogSources } from '@data/blog/config'
 import { calculateReadingTime, getDescription, getImage, parseRssFeed } from './rss'
 import type { BlogPost } from './types'
 
-const MEDIUM_FEED_URL = `https://medium.com/feed/@${blogSources.medium.username}`
+const MEDIUM_FEED_URL = `${blogSources.medium.profileUrl}/feed`
 
 interface Rss2JsonItem {
   title?: string

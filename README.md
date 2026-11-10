@@ -1,6 +1,6 @@
 # Vinit Shinde — Portfolio
 
-Personal portfolio of **Vinit Shinde**, a **Java & JVM developer** focused on reliable backend systems, REST APIs, and practical software projects.
+Personal portfolio of **Vinit Shinde**, a **Software Development Engineer ** specializing in Java, Spring Boot, and Microservices.
 
 **Live website:** [https://vinitshinde.netlify.app](https://vinitshinde.netlify.app)
 
@@ -57,8 +57,13 @@ The site is deployed on Netlify using `netlify.toml`. The build command is `npm 
 
 To help search engines discover the site, submit the sitemap in [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmasters).
 
-## Contact
+## Profiles & Contact
 
 - Email: [vineetshinde2559@gmail.com](mailto:vineetshinde2559@gmail.com)
-- GitHub: [github.com/Vin-it-9](https://github.com/Vin-it-9/)
-- LinkedIn: [linkedin.com/in/vinit-shinde-920531254](https://www.linkedin.com/in/vinit-shinde-920531254/)
+- GitHub: [github.com/vinit-s-shinde](https://github.com/vinit-s-shinde)
+- LinkedIn: [linkedin.com/in/vinit-s-shinde](https://linkedin.com/in/vinit-s-shinde)
+- Medium: [vinitshinde.medium.com](https://vinitshinde.medium.com)
+- DEV Community: [dev.to/vinitshinde](https://dev.to/vinitshinde)
+- LeetCode: [leetcode.com/u/vinitshinde](https://leetcode.com/u/vinitshinde/)
+- CodeChef: [codechef.com/users/nexus_2](https://codechef.com/users/nexus_2)
+- Codeforces: [codeforces.com/profile/Vinit99](https://codeforces.com/profile/Vinit99)

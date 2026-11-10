@@ -1,18 +1,18 @@
 export const blogSources = {
   devto: {
-    username: 'vinitshinde__',
-    profileUrl: 'https://dev.to/vinitshinde__',
+    username: 'vinitshinde',
+    profileUrl: 'https://dev.to/vinitshinde',
   },
   medium: {
-    username: 'vineetshinde2559',
-    profileUrl: 'https://medium.com/@vineetshinde2559',
+    username: 'vinitshinde',
+    profileUrl: 'https://vinitshinde.medium.com',
   },
   hashnode: {
     username: 'vinitshinde',
     profileUrl: 'https://hashnode.com/@vinitshinde',
   },
   linkedin: {
-    username: 'vinit-shinde-920531254',
-    profileUrl: 'https://www.linkedin.com/in/vinit-shinde-920531254/',
+    username: 'vinit-s-shinde',
+    profileUrl: 'https://linkedin.com/in/vinit-s-shinde',
   },
 } as const

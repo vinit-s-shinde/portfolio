@@ -55,10 +55,10 @@ export type ThemeConfig = {
 
 const defaultConfig: Omit<ThemeConfig, 'name' | 'id'> = {
   seo: {
-    title: 'Vinit Shinde',
-    subtitle: 'Java & JVM Developer',
+    title: 'Vinit Shinde | Software Development Engineer',
+    subtitle: 'Software Development Engineer',
     description:
-      'Vinit Shinde is a Java and JVM developer building reliable backend systems, REST APIs, and practical software projects.',
+      'Vinit Shinde is a Software Development Engineer specializing in Java, Spring Boot, Microservices, and Micronaut, building high-performance backend systems and scalable architectures.',
     author: 'Vinit Shinde',
     image: '/og-image.png',
   },
